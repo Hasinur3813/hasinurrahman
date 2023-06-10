@@ -67,6 +67,7 @@
      border:none !important;
  }
  .navbar-toggler .line{
+     display: block;
      width:28px;
      height:3px;
      margin:5px;
