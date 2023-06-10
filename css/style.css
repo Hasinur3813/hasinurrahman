@@ -921,8 +921,8 @@ form .input-box textarea:valid ~ span{
 }
 
 .content{
-    width:220px;
-    height:150px;
+    width:300px;
+    height:200px;
     padding:5px 10px;
     background:#f6f5f5;
     box-shadow: 0 0 5px var(--blue);
@@ -946,7 +946,7 @@ form .input-box textarea:valid ~ span{
     background:var(--blue);
     border-radius: 3px;
     color:#fff;
-    margin-top:10px;
+    margin-top:32px;
     transition: 0.3s;
 }
 .content button:hover{
