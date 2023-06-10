@@ -936,7 +936,7 @@ form .input-box textarea:valid ~ span{
 
 }
 .content h6{
-    margin-top:20px;
+    margin-top:38px;
     font-size:18px;
 }
 .content button{
@@ -946,7 +946,7 @@ form .input-box textarea:valid ~ span{
     background:var(--blue);
     border-radius: 3px;
     color:#fff;
-    margin-top:32px;
+    margin-top:22px;
     transition: 0.3s;
 }
 .content button:hover{
