@@ -12,7 +12,12 @@ navBar.addEventListener('click',() =>{
     })
 });
 
-
+// website preloader function
+    let loader = document.getElementById('preLoader');
+   window.addEventListener('load', ()=>{
+    loader.style.display = "none";
+   });
+   
 // onload funtion for text wrapping
 window.onload = ()=>{
 
