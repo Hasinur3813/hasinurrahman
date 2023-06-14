@@ -49,6 +49,18 @@
      color:var(--text);
  }
  
+ #preLoader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: var(--secondary);
+    z-index: 100; 
+    transition:0.3s;
+ }
+
  .header-area{
      width:100%;
      background-image: linear-gradient(#1d8bf962,#1d8bf95c),url('../img/bg.jpg');
