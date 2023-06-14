@@ -15,7 +15,9 @@ navBar.addEventListener('click',() =>{
 // website preloader function
     let loader = document.getElementById('preLoader');
    window.addEventListener('load', ()=>{
-    loader.style.display = "none";
+    setTimeout(()=>{
+        loader.style.display = "none";
+    },2000)
    });
    
 // onload funtion for text wrapping
