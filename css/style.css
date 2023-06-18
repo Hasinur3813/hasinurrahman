@@ -434,11 +434,10 @@
  }
  
  /* skills section */
- .skill_section{
-     background:#f6f5f5;
+  .skill_section{
+     background:#f8f9fa;
      padding-bottom: 50px;
      position: relative;
- 
  }
  
  .skill_section h1{
