@@ -295,7 +295,7 @@
  .about_section{
      position: relative;
      width:100%;
-     padding-bottom: 80px;
+     padding-bottom: 100px;
  }
  .about_section::before{
      position:absolute;
