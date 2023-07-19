@@ -135,7 +135,7 @@
      
  }
  
- a.active,a:hover{
+ a.active,.active:hover{
      background:var(--primary);
      color:#fff !important;
  }
