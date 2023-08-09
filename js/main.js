@@ -91,82 +91,40 @@ function underDevelopment(event){
 
 // variables for skills progress bar
 
-const count = document.querySelectorAll('.count');
-const progressBar = document.querySelectorAll('.progress_bar');
+const skills = [
+  { id: "html_count", barClass: "html", target: 85, count: { value: 0 }, barCount: { value: 0 } },
+  { id: "css_count", barClass: "css", target: 80, count: { value: 0 }, barCount: { value: 0 } },
+  { id: "bootstrap_count", barClass: "bootstrap", target: 75, count: { value: 0 }, barCount: { value: 0 } },
+  { id: "js_count", barClass: "js", target: 70, count: { value: 0 }, barCount: { value: 0 } },
+  { id: "tailwind_count", barClass: "tailwind", target: 10, count: { value: 0 }, barCount: { value: 0 } },
+  { id: "react_count", barClass: "react", target: 5, count: { value: 0 }, barCount: { value: 0 } },
+];
 
-
-// Countdown number Variables for counting number
-let countForHtml = { value: 0 };
-let countForCss = { value: 0 };
-let countForBoot = { value: 0 };
-let countForJs = { value: 0 };
-
-// Countdown width Variables for progress bar
-let barHtml = { value: 0 };
-let barCss = { value: 0 };
-let barBoot = { value: 0 };
-let barJs = { value: 0 };
-let barTailwind = { value: 0 };
-let barReact = { value: 0 };
-
-progressBar.forEach(bar =>{
-    if(bar.classList[1] == "html"){
-        const barInterval = setInterval(function(){countdownBar(bar, 85, barHtml, barInterval)},10);
+skills.forEach(skill => {
+  const countItem = document.getElementById(skill.id);
+  const progressBar = document.querySelector(`.${skill.barClass}`);
+  
+  const countInterval = setInterval(() => {
+    skill.count.value++;
+    countItem.textContent = skill.count.value + "%";
+    
+    if (skill.count.value === skill.target) {
+      clearInterval(countInterval);
+      skill.count.value = 0;
     }
-    if(bar.classList[1] == "css"){
-        const barInterval = setInterval(function(){countdownBar(bar, 80, barCss, barInterval)},10);
+  }, 10);
+  
+  const barInterval = setInterval(() => {
+    skill.barCount.value++;
+    progressBar.style.width = skill.barCount.value + "%";
+    
+    if (skill.barCount.value === skill.target) {
+      clearInterval(barInterval);
+      skill.barCount.value = 0;
     }
-    if(bar.classList[1] == "bootstrap"){
-        const barInterval = setInterval(function(){countdownBar(bar, 75, barBoot, barInterval)},10);
-    }
-    if(bar.classList[1] == "js"){
-        const barInterval = setInterval(function(){countdownBar(bar, 70, barJs, barInterval)},10);
-    }
-    if(bar.classList[1] == "tailwind"){
-        const barInterval = setInterval(function(){countdownBar(bar, 10, barTailwind, barInterval)},10);
-    }
-    if(bar.classList[1] == "react"){
-        const barInterval = setInterval(function(){countdownBar(bar, 5, barReact, barInterval)},10);
-    }
- 
+  }, 10);
 });
 
-// function for increasing bar to a specific width
-function countdownBar(bar, number, barCount, barInterval){
-    barCount.value++;
-    bar.style.width = barCount.value + "%";
-    if(barCount.value == number){
-        clearInterval(barInterval);
-        barCount.value == 0;
-    }
-};
-
-
-// function for counting skills
-count.forEach((item) =>{
-    if(item.id == "html_count"){
-      const interval =  setInterval(function(){countdown(item, 85, interval, countForHtml)},10);
-    }
-    if(item.id == "css_count"){
-        const interval =  setInterval(function(){countdown(item, 80, interval, countForCss)},10);
-    }
-    if(item.id == "bootstrap_count"){
-        const interval =  setInterval(function(){countdown(item, 75, interval, countForBoot)},10);
-    }
-    if(item.id == "js_count"){
-        const interval =  setInterval(function(){countdown(item, 70, interval, countForJs)},10);
-    }
-});
-
-// function for increasing count to a specific number
-function countdown(item, number, interval, count){
-    count.value++;
-    item.textContent = count.value + "%";
-    if(count.value == number){
-        clearInterval(interval);
-        count.value = 0;
-    }
-};
 
 
 // service card popup box code
