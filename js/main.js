@@ -89,42 +89,51 @@ function underDevelopment(event){
     alert('This page is still under development!');
 }
 
-// variables for skills progress bar
-
+// Skill data array containing information for each skill
 const skills = [
-  { id: "html_count", barClass: "html", target: 85, count: { value: 0 }, barCount: { value: 0 } },
-  { id: "css_count", barClass: "css", target: 80, count: { value: 0 }, barCount: { value: 0 } },
-  { id: "bootstrap_count", barClass: "bootstrap", target: 75, count: { value: 0 }, barCount: { value: 0 } },
-  { id: "js_count", barClass: "js", target: 70, count: { value: 0 }, barCount: { value: 0 } },
-  { id: "tailwind_count", barClass: "tailwind", target: 10, count: { value: 0 }, barCount: { value: 0 } },
-  { id: "react_count", barClass: "react", target: 5, count: { value: 0 }, barCount: { value: 0 } },
-];
-
-skills.forEach(skill => {
-  const countItem = document.getElementById(skill.id);
-  const progressBar = document.querySelector(`.${skill.barClass}`);
+    { id: "html_count", barClass: "html", target: 85, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "css_count", barClass: "css", target: 80, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "bootstrap_count", barClass: "bootstrap", target: 75, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "js_count", barClass: "js", target: 70, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "tailwind_count", barClass: "tailwind", target: 10, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "react_count", barClass: "react", target: 5, count: { value: 0 }, barCount: { value: 0 } },
+  ];
   
-  const countInterval = setInterval(() => {
-    skill.count.value++;
-    countItem.textContent = skill.count.value + "%";
+  // Loop through each skill and set up countdowns for skill count and progress bar
+  skills.forEach(skill => {
+    // Get the HTML element for the skill count
+    const countItem = document.getElementById(skill.id);
+    // Get the HTML element for the progress bar
+    const progressBar = document.querySelector(`.${skill.barClass}`);
     
-    if (skill.count.value === skill.target) {
-      clearInterval(countInterval);
-      skill.count.value = 0;
-    }
-  }, 10);
-  
-  const barInterval = setInterval(() => {
-    skill.barCount.value++;
-    progressBar.style.width = skill.barCount.value + "%";
+    // Set up interval for counting skill percentage
+    const countInterval = setInterval(() => {
+        if(countItem.id === "tailwind_count" || countItem.id === "react_count"){
+            countItem.textContent = '';
+        }else{
+            skill.count.value++;
+            countItem.textContent = skill.count.value + "%";
+        }
+      
+      // Clear the interval and reset count if target is reached
+      if (skill.count.value === skill.target) {
+        clearInterval(countInterval);
+        skill.count.value = 0;
+      }
+    }, 10);
     
-    if (skill.barCount.value === skill.target) {
-      clearInterval(barInterval);
-      skill.barCount.value = 0;
-    }
-  }, 10);
-});
-
+    // Set up interval for updating progress bar width
+    const barInterval = setInterval(() => {
+      skill.barCount.value++;
+      progressBar.style.width = skill.barCount.value + "%";
+      
+      // Clear the interval and reset bar count if target is reached
+      if (skill.barCount.value === skill.target) {
+        clearInterval(barInterval);
+        skill.barCount.value = 0;
+      }
+    }, 10);
+  });
 
 
 // service card popup box code
