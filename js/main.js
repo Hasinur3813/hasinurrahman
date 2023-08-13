@@ -272,6 +272,10 @@ card.forEach(item =>{
                 popupBox.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
+            window.addEventListener(click,()=>{
+                popupBox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            })
         }
        }
     })
