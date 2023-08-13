@@ -268,14 +268,15 @@ card.forEach(item =>{
             popupBox.innerHTML = popupContents[i].content;
             popupBox.style.display = 'block';
             document.body.style.overflow = 'hidden';
+              window.addEventListener("click",()=>{
+                popupBox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
             document.getElementById('close').onclick = ()=>{
                 popupBox.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
-            window.addEventListener("click",()=>{
-                popupBox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            })
+          
         }
        }
     })
