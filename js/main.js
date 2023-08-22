@@ -273,7 +273,7 @@ card.forEach(item =>{
         }
         setTimeout(()=>{
           callback()
-        },1000)
+        },10)
     })
   })
 }
