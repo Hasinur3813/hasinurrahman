@@ -329,9 +329,7 @@ img.forEach(eachImg => {
         function imgPopup(){
           function swapPopup(event){
               if(!imgMainTag.contains(event.target)){
-                console.log(event.target)
                 closeImgPopup();
-                console.log('popUp closed')
                 window.removeEventListener('click',swapPopup);
               }
            
