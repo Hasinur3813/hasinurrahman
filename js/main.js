@@ -328,7 +328,7 @@ img.forEach(eachImg => {
 
         function imgPopup(){
           function swapPopup(event){
-              if(!imgMainTag.contains(event.target)){
+              if(!imgMainTag.contains(event.target) && !projectLink.contains(event.target)){
                 closeImgPopup();
                 window.removeEventListener('click',swapPopup);
               }
