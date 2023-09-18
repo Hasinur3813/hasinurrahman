@@ -279,7 +279,7 @@ card.forEach(item =>{
 function closePopup(){
   function listner(event){
       let cardEvent = event.target.classList[0];
-    if((!popupBox.contains(event.target)) && (cardEvent != 'card'){
+    if((!popupBox.contains(event.target)) && (cardEvent != 'card')){
       popupBox.style.display = 'none';
     }
     window.removeEventListener('click',listner);
