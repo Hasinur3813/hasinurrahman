@@ -264,10 +264,10 @@ card.forEach(item =>{
                 popupBox.style.width = '280px';
             }
             popupBox.innerHTML = popupContents[i].content;
-            popupBox.style.display = 'block';
+            popupBox.classList.add('animate_popup');
             document.body.style.overflow = 'hidden';
             document.getElementById('close').onclick = ()=>{
-              popupBox.style.display = 'none';
+            popupBox.classList.remove('animate_popup');
               document.body.style.overflow = 'auto';
             }
           }
@@ -282,7 +282,7 @@ function closePopup(){
   function listner(event){
       let cardEvent = event.target.classList[0];
     if((!popupBox.contains(event.target)) && (cardEvent != 'card')){
-      popupBox.style.display = 'none';
+        popupBox.classList.remove('animate_popup');
       document.body.style.overflow = 'auto';
     }
     window.removeEventListener('click',listner);
