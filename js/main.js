@@ -289,7 +289,6 @@ function closePopup(){
   } 
   window.addEventListener('click', listner);
 }
-showPopup(closePopup);
 
 const trigger = document.querySelector('.trigger_button');
 
