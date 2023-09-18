@@ -253,7 +253,6 @@ const popupBox = document.querySelector('.popup_box');
 
 const popupContentTags = ['figmaToHtml','psdToHtml','responsiveDesign','customization','customDesign','wpTheme'];
 
-function showPopup(callback){
 card.forEach(item =>{
     item.addEventListener('click',()=>{
        let att = item.parentNode.getAttribute('data-item');
@@ -272,15 +271,15 @@ card.forEach(item =>{
           }
         }
         setTimeout(()=>{
-          callback()
+          closePopup()
         },10)
     })
   })
-}
 
 function closePopup(){
   function listner(event){
-    if((!popupBox.contains(event.target))){
+      let cardEvent = event.target.classList[0];
+    if((!popupBox.contains(event.target)) && (cardEvent != 'card'){
       popupBox.style.display = 'none';
     }
     window.removeEventListener('click',listner);
