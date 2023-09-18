@@ -265,8 +265,10 @@ card.forEach(item =>{
             }
             popupBox.innerHTML = popupContents[i].content;
             popupBox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
             document.getElementById('close').onclick = ()=>{
               popupBox.style.display = 'none';
+              document.body.style.overflow = 'auto';
             }
           }
         }
@@ -281,6 +283,7 @@ function closePopup(){
       let cardEvent = event.target.classList[0];
     if((!popupBox.contains(event.target)) && (cardEvent != 'card')){
       popupBox.style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
     window.removeEventListener('click',listner);
   } 
