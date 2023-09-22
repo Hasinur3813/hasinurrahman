@@ -82,11 +82,41 @@ window.onload = ()=>{
 };
 
 // function for those page which is still under development
-function underDevelopment(event){
-    event.preventDefault();
-    alert('This page is still under development!');
+const alertBox = document.getElementById('alertBox');
+const alertBar = document.getElementById('alertBar');
+
+function underDevelopment (event){
+  event.preventDefault();
+  if(alertBox.classList[2] == 'hide'){
+    alertBox.classList.remove('hide');
+    alertBox.style.transform = 'translate(-50%, -50%) scale(1)';
+    alertBox.style.top = '100px';
+    document.body.style.overflow = 'hidden';
+    let target = 100;
+    const decrease = setInterval(()=>{
+      if(target !== 0){
+        target = target - 1;
+        alertBar.style.width = target + '%';
+    
+      }else{
+        clearInterval(decrease);
+        target = 100;
+        alertBox.style.top = '-80px';
+        alertBar.style.width = '100%';
+        alertBox.style.transform = 'translate(-50%, -50%) scale(0) ';
+        alertBox.classList.add('hide');
+        document.body.style.overflow = 'auto';
+      }
+    },40)
+  }
 }
 
+function alertClose(){
+  alertBar.style.width = '100%';
+  alertBox.style.top = '-80px';
+  alertBox.style.transform = 'translate(-50%, -50%) scale(0) ';
+  alertBox.classList.add('hide')
+}
 // Skill data array containing information for each skill
 const skills = [
     { id: "html_count", barClass: "html", target: 85, count: { value: 0 }, barCount: { value: 0 } },
