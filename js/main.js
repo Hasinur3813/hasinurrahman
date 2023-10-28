@@ -84,7 +84,7 @@ window.onload = ()=>{
 // function for those page which is still under development
 const alertBox = document.getElementById('alertBox');
 const alertBar = document.getElementById('alertBar');
-
+let decrease;
 function underDevelopment (event){
   event.preventDefault();
   if(alertBox.classList[2] == 'hide'){
@@ -93,7 +93,7 @@ function underDevelopment (event){
     alertBox.style.top = '100px';
     document.body.style.overflow = 'hidden';
     let target = 100;
-    const decrease = setInterval(()=>{
+     decrease = setInterval(()=>{
       if(target !== 0){
         target = target - 1;
         alertBar.style.width = target + '%';
@@ -112,6 +112,7 @@ function underDevelopment (event){
 }
 
 function alertClose(){
+  clearInterval(decrease);
   alertBar.style.width = '100%';
   alertBox.style.top = '-80px';
   alertBox.style.transform = 'translate(-50%, -50%) scale(0) ';
