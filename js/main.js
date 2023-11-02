@@ -124,8 +124,8 @@ const skills = [
     { id: "css_count", barClass: "css", target: 80, count: { value: 0 }, barCount: { value: 0 } },
     { id: "bootstrap_count", barClass: "bootstrap", target: 75, count: { value: 0 }, barCount: { value: 0 } },
     { id: "js_count", barClass: "js", target: 70, count: { value: 0 }, barCount: { value: 0 } },
-    { id: "tailwind_count", barClass: "tailwind", target: 10, count: { value: 0 }, barCount: { value: 0 } },
-    { id: "react_count", barClass: "react", target: 5, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "tailwind_count", barClass: "tailwind", target: 40, count: { value: 0 }, barCount: { value: 0 } },
+    { id: "react_count", barClass: "react", target: 20, count: { value: 0 }, barCount: { value: 0 } },
   ];
   
   // Loop through each skill and set up countdowns for skill count and progress bar
