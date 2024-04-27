@@ -219,7 +219,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>W3C validated Code</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Hand coded</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 
@@ -239,7 +239,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>W3C validated Code</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Hand coded</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 
@@ -255,7 +255,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>CSS Media Query</li>
             <li><i class="fa-solid fa-circle-check"></i>Semantic Markup</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 
@@ -275,7 +275,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>W3C validated Code</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Hand coded</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 
@@ -295,7 +295,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>W3C validated Code</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Hand coded</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 
@@ -315,7 +315,7 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>Design Website using Elementor</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Responsive</li>
           </ul>
-          <button class="btn m-auto mt-3 mb-1 btn-primary w-100" id= "close">Close</button>
+          <button class="btn m-auto mt-3 mb-1 btn-primary w-100 close">Close</button>
         </div>`,
   },
 ];
@@ -345,10 +345,12 @@ card.forEach((item) => {
         popupBox.innerHTML = popupContents[i].content;
         popupBox.classList.add("animate_popup");
         document.body.style.overflow = "hidden";
-        document.getElementById("close").onclick = () => {
-          popupBox.classList.remove("animate_popup");
-          document.body.style.overflow = "auto";
-        };
+        document.querySelectorAll(".close").forEach((closeBtn) => {
+          closeBtn.onclick = () => {
+            popupBox.classList.remove("animate_popup");
+            document.body.style.overflow = "auto";
+          };
+        });
       }
     }
     setTimeout(() => {
