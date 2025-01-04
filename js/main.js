@@ -400,13 +400,14 @@ img.forEach((eachImg) => {
     let imgSrc = eachImg.firstElementChild.src;
     imgLink = eachImg.getAttribute("data-link");
     const dataLink = eachImg.getAttribute("data-link");
-    if (
-      dataLink == "travel" ||
-      dataLink == "crowdfunding" ||
-      dataLink == "edulink"
-    ) {
+
+    if (dataLink == "travel") {
       projectLink.href = "#";
       projectLink.setAttribute("id", "notLive");
+    } else if (dataLink == "edulink") {
+      projectLink.href = `https://edulink-5324d.web.app`;
+    } else if (dataLink == "crowdfunding") {
+      projectLink.href = `https://crowd-funding-pltatform.web.app`;
     } else {
       projectLink.href = `https://hasinur3813.github.io/${imgLink}`;
     }
