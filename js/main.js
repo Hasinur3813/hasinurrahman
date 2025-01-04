@@ -151,14 +151,14 @@ const skills = [
   {
     id: "tailwind_count",
     barClass: "tailwind",
-    target: 80,
+    target: 90,
     count: { value: 0 },
     barCount: { value: 0 },
   },
   {
     id: "react_count",
     barClass: "react",
-    target: 20,
+    target: 75,
     count: { value: 0 },
     barCount: { value: 0 },
   },
@@ -205,13 +205,14 @@ skills.forEach((skill) => {
 const popupContents = [
   {
     id: "figmaToHtml",
-    content: `<h4 class="text-center text-uppercase">Figma To HTML</h3>
+    content: `<h4 class="text-center text-uppercase">Figma To REACT</h3>
         <h6 class="text-start text-uppercase fw-bold">What You Will Get:</h6>
         <div class="list_box">
           <ul class="text-start navbar-nav">
             <li><i class="fa-solid fa-circle-check"></i>HTML5</li>
             <li><i class="fa-solid fa-circle-check"></i>CSS3</li>
-            <li><i class="fa-solid fa-circle-check"></i>Letest Bootstrap</li>
+            <li><i class="fa-solid fa-circle-check"></i>React</li>
+            <li><i class="fa-solid fa-circle-check"></i>Tailwind CSS</li>
             <li><i class="fa-solid fa-circle-check"></i>Javascript ES6</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Responsive</li>
             <li><i class="fa-solid fa-circle-check"></i>Pixel Perfect Conversion</li>
@@ -225,13 +226,14 @@ const popupContents = [
 
   {
     id: "psdToHtml",
-    content: `<h4 class="text-center text-uppercase">PSD To HTML</h3>
+    content: `<h4 class="text-center text-uppercase">PSD To REACT</h3>
         <h6 class="text-start text-uppercase fw-bold">What You Will Get:</h6>
         <div class="list_box">
           <ul class="text-start navbar-nav">
             <li><i class="fa-solid fa-circle-check"></i>HTML5</li>
             <li><i class="fa-solid fa-circle-check"></i>CSS3</li>
-            <li><i class="fa-solid fa-circle-check"></i>Letest Bootstrap</li>
+            <li><i class="fa-solid fa-circle-check"></i>React</li>
+            <li><i class="fa-solid fa-circle-check"></i>Tailwind CSS</li>
             <li><i class="fa-solid fa-circle-check"></i>Javascript ES6</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Responsive</li>
             <li><i class="fa-solid fa-circle-check"></i>Pixel Perfect Conversion</li>
@@ -268,6 +270,8 @@ const popupContents = [
             <li><i class="fa-solid fa-circle-check"></i>HTML5</li>
             <li><i class="fa-solid fa-circle-check"></i>CSS3</li>
             <li><i class="fa-solid fa-circle-check"></i>Letest Bootstrap</li>
+            <li><i class="fa-solid fa-circle-check"></i>Tailwind CSS</li>
+            <li><i class="fa-solid fa-circle-check"></i>React</li>
             <li><i class="fa-solid fa-circle-check"></i>Javascript ES6</li>
             <li><i class="fa-solid fa-circle-check"></i>100% Responsive</li>
             <li><i class="fa-solid fa-circle-check"></i>Pixel Perfect Conversion</li>
@@ -374,7 +378,7 @@ function closePopup() {
 const trigger = document.querySelector(".trigger_button");
 
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 700) {
+  if (window.scrollY > 700) {
     trigger.classList.add("active_trigger");
     trigger.classList.remove("hide_trigger");
   } else {
@@ -395,7 +399,12 @@ img.forEach((eachImg) => {
   eachImg.addEventListener("click", () => {
     let imgSrc = eachImg.firstElementChild.src;
     imgLink = eachImg.getAttribute("data-link");
-    if (eachImg.getAttribute("data-link") == "travel") {
+    const dataLink = eachImg.getAttribute("data-link");
+    if (
+      dataLink == "travel" ||
+      dataLink == "crowdfunding" ||
+      dataLink == "edulink"
+    ) {
       projectLink.href = "#";
       projectLink.setAttribute("id", "notLive");
     } else {
