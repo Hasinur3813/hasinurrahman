@@ -3,12 +3,28 @@
 const navBar = document.querySelector(".NavBar");
 const Name = document.querySelector(".header-title").lastChild;
 const line = document.querySelectorAll(".line");
+const navLink = document.querySelectorAll(".nav-link");
 
 // toogle menu for nav bar
 
 navBar.addEventListener("click", () => {
   line.forEach((item) => {
     item.classList.toggle("bar");
+  });
+});
+
+const removeActiveClass = () => {
+  navLink.forEach((link) => {
+    link.classList.remove("active");
+  });
+};
+
+// set active class in the nav link that is clicked
+
+navLink.forEach((link) => {
+  link.addEventListener("click", () => {
+    removeActiveClass();
+    link.classList.add("active");
   });
 });
 
@@ -33,6 +49,7 @@ window.onload = () => {
   let elementCount = 0;
   // Creating an array of characters from the element array
   let nameArray = Array.from(element[elementCount]);
+
   function mainFunction() {
     // adding each character from the array into the span tag
     Name.textContent += nameArray[count];
@@ -54,7 +71,7 @@ window.onload = () => {
 
   function removeText(remove) {
     // Getting the text content of Name element
-    let content = Name.textContent;
+    let content = Name?.textContent;
     // Removing the last character from the text content
     let mainContent = content.slice(0, -1);
     // console.log(content.length)
